@@ -3,7 +3,7 @@ package ru.victimoftrap.enigma.rotors;
 import org.apache.commons.collections4.BidiMap;
 import org.apache.commons.collections4.bidimap.DualHashBidiMap;
 
-public class RotorII implements BiDirectionConnection {
+public class RotorII implements Rotor {
     private final BidiMap<Character, Character> frontAlphabet;
     private final BidiMap<Character, Character> backAlphabet;
     private final int ROTATION_TRIGGER = 5;
@@ -52,5 +52,10 @@ public class RotorII implements BiDirectionConnection {
     @Override
     public Character getBack(final Character backCharacter) {
         return backAlphabet.get(backCharacter);
+    }
+
+    @Override
+    public int getNextRotorTriggeredStep() {
+        return ROTATION_TRIGGER;
     }
 }

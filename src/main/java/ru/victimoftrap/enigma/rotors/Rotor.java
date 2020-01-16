@@ -1,7 +1,9 @@
 package ru.victimoftrap.enigma.rotors;
 
-public interface BiDirectionConnection {
+public interface Rotor {
     Character getFront(Character frontCharacter);
 
     Character getBack(Character backCharacter);
+
+    int getNextRotorTriggeredStep();
 }
