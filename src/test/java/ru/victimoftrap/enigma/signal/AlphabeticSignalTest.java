@@ -29,7 +29,11 @@ class AlphabeticSignalTest {
 
         final AlphabeticSignal signal6 = new AlphabeticSignal('Y');
         char actualChar6 = signal6.plus('D').getCharacter();
-        assertEquals('C', actualChar6);
+        assertEquals('B', actualChar6);
+
+        final AlphabeticSignal signal7 = new AlphabeticSignal('D');
+        char actualChar7 = signal7.plus('Z').getCharacter();
+        assertEquals('C', actualChar7);
     }
 
     @Test
@@ -61,5 +65,9 @@ class AlphabeticSignalTest {
         final AlphabeticSignal signal7 = new AlphabeticSignal('V');
         char actualChar7 = signal7.minus('R').getCharacter();
         assertEquals('E', actualChar7);
+
+        final AlphabeticSignal signal8 = new AlphabeticSignal('A');
+        char actualChar8 = signal8.minus('E').getCharacter();
+        assertEquals('W', actualChar8);
     }
 }

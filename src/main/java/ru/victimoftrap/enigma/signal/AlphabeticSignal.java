@@ -31,7 +31,7 @@ public class AlphabeticSignal {
         } else if (charCode < MIN_SIGNAL) {
             resultChar = (char) (MIN_SIGNAL + charCode);
         } else if (charCode > MAX_SIGNAL) {
-            resultChar = (char) ((charCode - MAX_SIGNAL) + MIN_SIGNAL);
+            resultChar = (char) ((charCode - MAX_SIGNAL - 1) + MIN_SIGNAL);
         }
         return resultChar;
     }
