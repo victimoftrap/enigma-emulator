@@ -1,9 +1,15 @@
 package ru.victimoftrap.enigma.rotors;
 
+import ru.victimoftrap.enigma.signal.AlphabeticSignal;
+
 public interface Rotor {
-    Character getFront(Character frontCharacter);
+    AlphabeticSignal exchange(AlphabeticSignal signal);
 
-    Character getBack(Character backCharacter);
+    AlphabeticSignal backwardExchange(AlphabeticSignal signal);
 
-    int getNextRotorTriggeredStep();
+    AlphabeticSignal getRingSetting();
+
+    char getTurnoverPosition();
+
+    void rotate();
 }

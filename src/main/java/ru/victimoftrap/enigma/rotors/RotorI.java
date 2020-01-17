@@ -1,12 +1,15 @@
 package ru.victimoftrap.enigma.rotors;
 
+import ru.victimoftrap.enigma.signal.AlphabeticSignal;
+
 import org.apache.commons.collections4.BidiMap;
 import org.apache.commons.collections4.bidimap.DualHashBidiMap;
 
 public class RotorI implements Rotor {
     private final BidiMap<Character, Character> frontAlphabet;
     private final BidiMap<Character, Character> backAlphabet;
-    private final int ROTATION_TRIGGER = 17;
+    private final char TURNOVER_POSITION = 'R';
+    private AlphabeticSignal ringSetting = new AlphabeticSignal('A');
 
     public RotorI() {
         frontAlphabet = new DualHashBidiMap<>();
@@ -45,17 +48,35 @@ public class RotorI implements Rotor {
     }
 
     @Override
-    public Character getFront(final Character frontCharacter) {
-        return frontAlphabet.get(frontCharacter);
+    public AlphabeticSignal getRingSetting() {
+        return ringSetting;
+    }
+
+    public void setRingSetting(final AlphabeticSignal ringSetting) {
+        this.ringSetting = ringSetting;
     }
 
     @Override
-    public Character getBack(final Character backCharacter) {
-        return backAlphabet.get(backCharacter);
+    public AlphabeticSignal exchange(final AlphabeticSignal signal) {
+        final char exchanged = frontAlphabet.get(signal.getCharacter());
+        signal.setCharacter(exchanged);
+        return signal;
     }
 
     @Override
-    public int getNextRotorTriggeredStep() {
-        return ROTATION_TRIGGER;
+    public AlphabeticSignal backwardExchange(final AlphabeticSignal signal) {
+        final char exchanged = backAlphabet.get(signal.getCharacter());
+        signal.setCharacter(exchanged);
+        return signal;
+    }
+
+    @Override
+    public char getTurnoverPosition() {
+        return TURNOVER_POSITION;
+    }
+
+    @Override
+    public void rotate() {
+        ringSetting.plus('B');
     }
 }
