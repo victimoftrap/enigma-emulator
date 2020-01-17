@@ -1,5 +1,7 @@
 package ru.victimoftrap.enigma.signal;
 
+import java.util.Objects;
+
 /**
  * Class for alphabetic signal that used in rotors of Enigma.
  */
@@ -40,9 +42,32 @@ public class AlphabeticSignal {
         return this;
     }
 
+    public AlphabeticSignal plus(final AlphabeticSignal signal) {
+        return plus(signal.getCharacter());
+    }
+
     public AlphabeticSignal minus(char letter) {
         int resultCode = character - letter;
         character = fitInAlphabetBorders(resultCode);
         return this;
+    }
+
+    public AlphabeticSignal minus(final AlphabeticSignal signal) {
+        return minus(signal.getCharacter());
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof AlphabeticSignal)) return false;
+        AlphabeticSignal that = (AlphabeticSignal) o;
+        return character == that.character &&
+                MIN_SIGNAL == that.MIN_SIGNAL &&
+                MAX_SIGNAL == that.MAX_SIGNAL;
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(character, MIN_SIGNAL, MAX_SIGNAL);
     }
 }
