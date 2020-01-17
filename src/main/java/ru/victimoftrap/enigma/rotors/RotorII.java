@@ -9,7 +9,7 @@ public class RotorII implements Rotor {
     private final BidiMap<Character, Character> frontAlphabet;
     private final BidiMap<Character, Character> backAlphabet;
     private final char TURNOVER_POSITION = 'F';
-    private AlphabeticSignal ringSetting = new AlphabeticSignal('A');
+    private AlphabeticSignal initialPosition = new AlphabeticSignal('A');
 
     public RotorII() {
         frontAlphabet = new DualHashBidiMap<>();
@@ -48,12 +48,8 @@ public class RotorII implements Rotor {
     }
 
     @Override
-    public AlphabeticSignal getRingSetting() {
-        return ringSetting;
-    }
-
-    public void setRingSetting(final AlphabeticSignal ringSetting) {
-        this.ringSetting = ringSetting;
+    public AlphabeticSignal getInitialPosition() {
+        return initialPosition;
     }
 
     @Override
@@ -77,6 +73,6 @@ public class RotorII implements Rotor {
 
     @Override
     public void rotate() {
-        ringSetting.plus('B');
+        initialPosition.plus('B');
     }
 }

@@ -7,7 +7,7 @@ public interface Rotor {
 
     AlphabeticSignal backwardExchange(AlphabeticSignal signal);
 
-    AlphabeticSignal getRingSetting();
+    AlphabeticSignal getInitialPosition();
 
     char getTurnoverPosition();
 
