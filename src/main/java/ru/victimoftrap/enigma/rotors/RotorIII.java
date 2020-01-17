@@ -13,36 +13,36 @@ public class RotorIII implements Rotor {
 
     public RotorIII() {
         frontAlphabet = new DualHashBidiMap<>();
-        frontAlphabet.put('B', 'T');
-        frontAlphabet.put('D', 'A');
-        frontAlphabet.put('F', 'G');
-        frontAlphabet.put('H', 'B');
-        frontAlphabet.put('J', 'P');
+        frontAlphabet.put('A', 'B');
+        frontAlphabet.put('B', 'D');
+        frontAlphabet.put('C', 'F');
+        frontAlphabet.put('D', 'H');
+        frontAlphabet.put('E', 'J');
 
-        frontAlphabet.put('L', 'C');
-        frontAlphabet.put('C', 'S');
-        frontAlphabet.put('P', 'D');
-        frontAlphabet.put('R', 'Q');
-        frontAlphabet.put('T', 'E');
+        frontAlphabet.put('F', 'L');
+        frontAlphabet.put('G', 'C');
+        frontAlphabet.put('H', 'P');
+        frontAlphabet.put('I', 'R');
+        frontAlphabet.put('J', 'T');
 
-        frontAlphabet.put('X', 'U');
-        frontAlphabet.put('V', 'F');
-        frontAlphabet.put('Z', 'V');
+        frontAlphabet.put('K', 'X');
+        frontAlphabet.put('L', 'V');
+        frontAlphabet.put('M', 'Z');
         frontAlphabet.put('N', 'N');
-        frontAlphabet.put('Y', 'Z');
+        frontAlphabet.put('O', 'Y');
 
-        frontAlphabet.put('E', 'H');
-        frontAlphabet.put('I', 'Y');
-        frontAlphabet.put('W', 'I');
-        frontAlphabet.put('G', 'X');
-        frontAlphabet.put('A', 'J');
+        frontAlphabet.put('P', 'E');
+        frontAlphabet.put('Q', 'I');
+        frontAlphabet.put('R', 'W');
+        frontAlphabet.put('S', 'G');
+        frontAlphabet.put('T', 'A');
 
-        frontAlphabet.put('K', 'W');
-        frontAlphabet.put('M', 'L');
-        frontAlphabet.put('U', 'R');
-        frontAlphabet.put('S', 'K');
-        frontAlphabet.put('Q', 'O');
-        frontAlphabet.put('O', 'M');
+        frontAlphabet.put('U', 'K');
+        frontAlphabet.put('V', 'M');
+        frontAlphabet.put('W', 'U');
+        frontAlphabet.put('X', 'S');
+        frontAlphabet.put('Y', 'Q');
+        frontAlphabet.put('Z', 'O');
 
         backAlphabet = frontAlphabet.inverseBidiMap();
     }
