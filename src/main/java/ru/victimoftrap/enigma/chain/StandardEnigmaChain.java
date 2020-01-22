@@ -5,14 +5,19 @@ import ru.victimoftrap.enigma.rotors.Rotor;
 import ru.victimoftrap.enigma.reflectors.Reflector;
 import ru.victimoftrap.enigma.signal.AlphabeticSignal;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class StandardEnigmaChain implements EnigmaChain {
-    private Rotor rotor1;
-    private Rotor rotor2;
-    private Rotor rotor3;
+    private List<Rotor> rotors;
     private Reflector reflector;
     private ChainElement chain;
 
-    private ChainElement buildChain() {
+    private ChainElement buildChain(
+            final Rotor rotor1,
+            final Rotor rotor2,
+            final Rotor rotor3,
+            final Reflector reflector) {
         final ChainElement forwardStartElement = new ForwardStartChainElement(rotor1);
         final ChainElement forwardMiddleElement = new ForwardMiddleChainElement(rotor2);
         final ChainElement beforeReflectorElement = new ForwardMiddleChainElement(rotor3);
@@ -44,29 +49,20 @@ public class StandardEnigmaChain implements EnigmaChain {
         return forwardStartElement;
     }
 
-    public StandardEnigmaChain(final Rotor rotor1,
-                               final Rotor rotor2,
-                               final Rotor rotor3,
-                               final Reflector reflector) {
-        this.rotor1 = rotor1;
-        this.rotor2 = rotor2;
-        this.rotor3 = rotor3;
+    public StandardEnigmaChain(
+            final Rotor rotor1,
+            final Rotor rotor2,
+            final Rotor rotor3,
+            final Reflector reflector
+    ) {
+        this.rotors = Arrays.asList(rotor1, rotor2, rotor3);
         this.reflector = reflector;
-        chain = buildChain();
+
+        this.chain = buildChain(rotor1, rotor2, rotor3, reflector);
     }
 
-    public StandardEnigmaChain withFirstRotorInitialPosition(final char position) {
-        rotor1.getInitialPosition().setCharacter(position);
-        return this;
-    }
-
-    public StandardEnigmaChain withSecondRotorInitialPosition(final char position) {
-        rotor2.getInitialPosition().setCharacter(position);
-        return this;
-    }
-
-    public StandardEnigmaChain withThirdRotorInitialPosition(final char position) {
-        rotor3.getInitialPosition().setCharacter(position);
+    public StandardEnigmaChain withRotorInitialPosition(final int rotorNumber, final char position) {
+        rotors.get(rotorNumber).getInitialPosition().setCharacter(position);
         return this;
     }
 
