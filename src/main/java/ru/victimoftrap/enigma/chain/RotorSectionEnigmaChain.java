@@ -8,7 +8,7 @@ import ru.victimoftrap.enigma.signal.AlphabeticSignal;
 import java.util.Arrays;
 import java.util.List;
 
-public class StandardEnigmaChain implements EnigmaChain {
+public class RotorSectionEnigmaChain implements EnigmaChain {
     private List<Rotor> rotors;
     private Reflector reflector;
     private ChainElement chain;
@@ -49,7 +49,7 @@ public class StandardEnigmaChain implements EnigmaChain {
         return forwardStartElement;
     }
 
-    public StandardEnigmaChain(
+    public RotorSectionEnigmaChain(
             final Rotor rotor1,
             final Rotor rotor2,
             final Rotor rotor3,
@@ -61,7 +61,7 @@ public class StandardEnigmaChain implements EnigmaChain {
         this.chain = buildChain(rotor1, rotor2, rotor3, reflector);
     }
 
-    public StandardEnigmaChain withRotorInitialPosition(final int rotorNumber, final char position) {
+    public RotorSectionEnigmaChain withRotorInitialPosition(final int rotorNumber, final char position) {
         rotors.get(rotorNumber).getInitialPosition().setCharacter(position);
         return this;
     }
