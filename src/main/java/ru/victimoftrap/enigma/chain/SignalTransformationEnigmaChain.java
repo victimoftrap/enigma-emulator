@@ -7,7 +7,6 @@ import ru.victimoftrap.enigma.reflectors.Reflector;
 import ru.victimoftrap.enigma.signal.AlphabeticSignal;
 
 import java.util.List;
-import java.util.Arrays;
 
 public class SignalTransformationEnigmaChain implements EnigmaChain {
     private Plugboard plugboard;
@@ -63,16 +62,16 @@ public class SignalTransformationEnigmaChain implements EnigmaChain {
 
     public SignalTransformationEnigmaChain(
             final Plugboard plugboard,
-            final Rotor rotor1,
-            final Rotor rotor2,
-            final Rotor rotor3,
+            final List<Rotor> rotors,
             final Reflector reflector
     ) {
         this.plugboard = plugboard;
-        this.rotors = Arrays.asList(rotor1, rotor2, rotor3);
+        this.rotors = rotors;
         this.reflector = reflector;
 
-        this.chain = buildChain(plugboard, rotor1, rotor2, rotor3, reflector);
+        this.chain = buildChain(
+                plugboard, rotors.get(0), rotors.get(1), rotors.get(2), reflector
+        );
     }
 
     @Override
