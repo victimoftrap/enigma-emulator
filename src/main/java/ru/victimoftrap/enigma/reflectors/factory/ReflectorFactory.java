@@ -1,6 +1,7 @@
 package ru.victimoftrap.enigma.reflectors.factory;
 
 import ru.victimoftrap.enigma.reflectors.Reflector;
+import ru.victimoftrap.enigma.reflectors.ReflectorA;
 import ru.victimoftrap.enigma.reflectors.ReflectorB;
 import ru.victimoftrap.enigma.reflectors.ReflectorC;
 
@@ -13,6 +14,7 @@ public class ReflectorFactory {
 
     public ReflectorFactory() {
         reflectorMap = new HashMap<>();
+        reflectorMap.put(ReflectorType.REFLECTOR_A, ReflectorA::new);
         reflectorMap.put(ReflectorType.REFLECTOR_B, ReflectorB::new);
         reflectorMap.put(ReflectorType.REFLECTOR_C, ReflectorC::new);
     }
