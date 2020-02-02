@@ -6,6 +6,9 @@ public class FileEnigmaPlugboardConnection {
     private String fromCharacter;
     private String toCharacter;
 
+    public FileEnigmaPlugboardConnection() {
+    }
+
     public FileEnigmaPlugboardConnection(final String fromCharacter, final String toCharacter) {
         this.fromCharacter = fromCharacter;
         this.toCharacter = toCharacter;
@@ -15,8 +18,16 @@ public class FileEnigmaPlugboardConnection {
         return fromCharacter;
     }
 
+    public void setFromCharacter(final String fromCharacter) {
+        this.fromCharacter = fromCharacter;
+    }
+
     public String getToCharacter() {
         return toCharacter;
+    }
+
+    public void setToCharacter(final String toCharacter) {
+        this.toCharacter = toCharacter;
     }
 
     @Override

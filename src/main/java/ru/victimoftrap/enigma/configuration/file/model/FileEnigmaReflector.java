@@ -5,12 +5,19 @@ import java.util.Objects;
 public class FileEnigmaReflector {
     private String reflectorName;
 
+    public FileEnigmaReflector() {
+    }
+
     public FileEnigmaReflector(final String reflectorName) {
         this.reflectorName = reflectorName;
     }
 
     public String getReflectorName() {
         return reflectorName;
+    }
+
+    public void setReflectorName(final String reflectorName) {
+        this.reflectorName = reflectorName;
     }
 
     @Override

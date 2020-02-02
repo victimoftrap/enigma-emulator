@@ -6,6 +6,9 @@ public class FileEnigmaRotor {
     private String rotorName;
     private String initialPosition;
 
+    public FileEnigmaRotor() {
+    }
+
     public FileEnigmaRotor(final String rotorName, final String initialPosition) {
         this.rotorName = rotorName;
         this.initialPosition = initialPosition;
@@ -15,8 +18,16 @@ public class FileEnigmaRotor {
         return rotorName;
     }
 
+    public void setRotorName(final String rotorName) {
+        this.rotorName = rotorName;
+    }
+
     public String getInitialPosition() {
         return initialPosition;
+    }
+
+    public void setInitialPosition(final String initialPosition) {
+        this.initialPosition = initialPosition;
     }
 
     @Override

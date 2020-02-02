@@ -8,6 +8,9 @@ public class FileEnigmaConfiguration {
     private FileEnigmaReflector reflector;
     private List<FileEnigmaPlugboardConnection> plugboardConnections;
 
+    public FileEnigmaConfiguration() {
+    }
+
     public FileEnigmaConfiguration(
             final List<FileEnigmaRotor> rotors,
             final FileEnigmaReflector reflector,
@@ -22,12 +25,24 @@ public class FileEnigmaConfiguration {
         return rotors;
     }
 
+    public void setRotors(final List<FileEnigmaRotor> rotors) {
+        this.rotors = rotors;
+    }
+
     public FileEnigmaReflector getReflector() {
         return reflector;
     }
 
+    public void setReflector(final FileEnigmaReflector reflector) {
+        this.reflector = reflector;
+    }
+
     public List<FileEnigmaPlugboardConnection> getPlugboardConnections() {
         return plugboardConnections;
+    }
+
+    public void setPlugboardConnections(final List<FileEnigmaPlugboardConnection> plugboardConnections) {
+        this.plugboardConnections = plugboardConnections;
     }
 
     @Override

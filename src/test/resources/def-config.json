@@ -1,0 +1,25 @@
+{
+  "rotors": [
+    {
+      "rotorName": "RotorI",
+      "initialPosition": "A"
+    },
+    {
+      "rotorName": "RotorII",
+      "initialPosition": "A"
+    },
+    {
+      "rotorName": "RotorIII",
+      "initialPosition": "A"
+    }
+  ],
+  "reflector": {
+    "reflectorName": "ReflectorB"
+  },
+  "plugboardConnections": [
+    {
+      "fromCharacter": "A",
+      "toCharacter": "A"
+    }
+  ]
+}
