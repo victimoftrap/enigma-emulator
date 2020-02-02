@@ -1,0 +1,11 @@
+rotors:
+  - rotorName: "ROTOR_I"
+    initialPosition: "A"
+  - rotorName: "ROTOR_II"
+    initialPosition: "A"
+  - rotorName: "ROTOR_III"
+    initialPosition: "A"
+reflector: "REFLECTOR_B"
+plugboardConnections:
+  - fromCharacter: "A"
+    toCharacter: "A"
