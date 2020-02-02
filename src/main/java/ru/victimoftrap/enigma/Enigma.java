@@ -25,7 +25,7 @@ public class Enigma {
             char encodedSymbol;
 
             if (Character.isAlphabetic(symbol)) {
-                var signal = new AlphabeticSignal(symbol);
+                var signal = new AlphabeticSignal(Character.toUpperCase(symbol));
                 signal = enigmaChain.passTrough(signal);
                 encodedSymbol = signal.getCharacter();
             } else {
