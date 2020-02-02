@@ -65,6 +65,6 @@ public class CommandLineEnigmaStarter {
 
         var enigma = new Enigma(enigmaConfiguration);
         var result = enigma.encode(sourceMessage);
-        System.out.printf("Encrypted message: %s", result);
+        System.out.printf("Encrypted message: %s\n", result);
     }
 }
